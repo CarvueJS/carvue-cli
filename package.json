@@ -1,0 +1,30 @@
+{
+  "name": "carvue-cli",
+  "version": "0.0.1",
+  "description": "the cli for carvuejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarvueJS/carvue-cli.git"
+  },
+  "keywords": [
+    "carvuejs",
+    "carbon-design"
+  ],
+  "author": "nicholas lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarvueJS/carvue-cli/issues"
+  },
+  "homepage": "https://github.com/CarvueJS/carvue-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "inquirer": "^6.0.0",
+    "metalsmith": "^2.3.0",
+    "rimraf": "^2.6.2"
+  }
+}

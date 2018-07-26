@@ -1,2 +1,2 @@
 # carvue-cli
-the cli for CarvueJS
+A simple CLI for scaffolding CarvueJS projects.
