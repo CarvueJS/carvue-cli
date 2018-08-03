@@ -4,7 +4,6 @@ const program = require('commander')
 const localPath = require('../lib/local-path')
 const generate = require('../lib/generate')
 const exists = require('fs').existsSync
-const home = require('user-home')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const path = require('path')
@@ -79,7 +78,6 @@ function run () {
   if (isLocalPath(template)) {
     const templatePath = getTemplatePath(template)
     if (exists(templatePath)) {
-      console.log(templatePath)
       generate(name, templatePath, to, err => {
         if (err) logger.fatal(err)
         console.log()
