@@ -3,8 +3,14 @@
   "version": "0.0.1",
   "description": "the cli for carvuejs",
   "main": "index.js",
+  "bin": {
+    "carvue": "bin/carvue",
+    "carvue-init": "bin/carvue-init"
+  },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "carvue": "node ./bin/carvue init",
+    "carvue-init": "node ./bin/carvue-init"
   },
   "repository": {
     "type": "git",
@@ -23,8 +29,13 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
-    "inquirer": "^6.0.0",
+    "consolidate": "^0.15.1",
+    "handlebars": "^4.0.11",
     "metalsmith": "^2.3.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "user-home": "^2.0.0"
+  },
+  "devDependencies": {
+    "inquirer": "^6.0.0"
   }
 }

@@ -4,6 +4,11 @@ const program = require('commander')
 const localPath = require('../lib/local-path')
 const generate = require('../lib/generate')
 const exists = require('fs').existsSync
+const home = require('user-home')
+const chalk = require('chalk')
+const inquirer = require('inquirer')
+const path = require('path')
+const logger = require('../lib/logger')
 
 const isLocalPath = localPath.isLocalPath
 const getTemplatePath = localPath.getTemplatePath
@@ -24,10 +29,7 @@ program.on('--help', () => {
   console.log('  Examples:')
   console.log()
   console.log(chalk.gray('    # create a new project with an official template'))
-  console.log('    $ carvue init webpack my-project')
-  console.log()
-  console.log(chalk.gray('    # create a new project straight from a github template'))
-  console.log('    $ carvue init username/repo my-project')
+  console.log('    $ carvue init my-project')
   console.log()
 })
 
@@ -38,6 +40,37 @@ function help () {
 help()
 
 /**
+ * Settings.
+ */
+
+const rawName = program.args[0]
+const inPlace = !rawName || rawName === '.'
+const name = inPlace ? path.relative('../', process.cwd()) : rawName
+const to = path.resolve(rawName || '.')
+const template = './'
+
+console.log()
+process.on('exit', () => {
+  console.log()
+})
+
+if (inPlace || exists(to)) {
+  inquirer.prompt([{
+    type: 'confirm',
+    message: inPlace
+      ? 'Generate project in current directory?'
+      : 'Target directory exists. Continue?',
+    name: 'ok'
+  }]).then(answers => {
+    if (answers.ok) {
+      run()
+    }
+  })
+} else {
+  run()
+}
+
+/**
  * Check, download and generate the project.
  */
 
@@ -46,6 +79,7 @@ function run () {
   if (isLocalPath(template)) {
     const templatePath = getTemplatePath(template)
     if (exists(templatePath)) {
+      console.log(templatePath)
       generate(name, templatePath, to, err => {
         if (err) logger.fatal(err)
         console.log()
