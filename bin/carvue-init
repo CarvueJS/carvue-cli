@@ -46,7 +46,7 @@ const rawName = program.args[0]
 const inPlace = !rawName || rawName === '.'
 const name = inPlace ? path.relative('../', process.cwd()) : rawName
 const to = path.resolve(rawName || '.')
-const template = './'
+const template = './templates/webpack'
 
 console.log()
 process.on('exit', () => {
