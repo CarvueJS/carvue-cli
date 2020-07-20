@@ -28,7 +28,7 @@
   "homepage": "https://github.com/CarvueJS/carvue-cli#readme",
   "dependencies": {
     "chalk": "^2.4.1",
-    "commander": "^2.16.0",
+    "commander": "^6.0.0",
     "consolidate": "^0.15.1",
     "handlebars": "^4.0.11",
     "metalsmith": "^2.3.0",
