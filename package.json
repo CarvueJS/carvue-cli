@@ -29,7 +29,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
-    "consolidate": "^0.15.1",
+    "consolidate": "^0.16.0",
     "handlebars": "^4.0.11",
     "metalsmith": "^2.3.0",
     "rimraf": "^2.6.2",
