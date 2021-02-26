@@ -36,6 +36,6 @@
     "user-home": "^2.0.0"
   },
   "devDependencies": {
-    "inquirer": "^6.0.0"
+    "inquirer": "^8.0.0"
   }
 }
