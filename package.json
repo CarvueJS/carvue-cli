@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/CarvueJS/carvue-cli#readme",
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^4.1.1",
     "commander": "^2.16.0",
     "consolidate": "^0.15.1",
     "handlebars": "^4.0.11",
